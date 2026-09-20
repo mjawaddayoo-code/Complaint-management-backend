@@ -46,6 +46,12 @@ app.use(session({
 app.get('/api/health', (req, res) => {
     res.json({ ok: true });
 });
+app.get("/", (req, res) => {
+  res.json({
+    message: "Complaint Management API is running",
+    status: "OK"
+  });
+});
 
 app.use(authRoutes);
 app.use(complaintRoutes);
